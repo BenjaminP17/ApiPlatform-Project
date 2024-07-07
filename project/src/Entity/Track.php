@@ -18,6 +18,9 @@ class Track
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[ORM\ManyToOne(inversedBy: 'track')]
+    private ?Album $album = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -31,6 +34,18 @@ class Track
     public function setTitle(string $title): static
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getAlbum(): ?Album
+    {
+        return $this->album;
+    }
+
+    public function setAlbum(?Album $album): static
+    {
+        $this->album = $album;
 
         return $this;
     }
