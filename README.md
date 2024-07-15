@@ -1,10 +1,10 @@
 # Docker PHP APACHE MYSQL & SYMFONY
 
-Ce projet fournit un conteneur Docker qui inclut PHP 8.1, Apache, MySQL, phpMyAdmin et Symfony
+API de musique réalisé avec API PLATFORM, regroupants des noms d'artistes fictifs, albums et pistes musicales (titres).
 
 ## Introduction
 
-Ce dépôt contient une configuration Docker avec Apache, MySQL, PHP 8.1 et inclut phpMyAdmin pour la gestion de base de données. Il est destiné à fournir un environnement de développement PHP/Symfony simple et reproductible.
+API contenue dans un conteneur Docker avec Apache, MySQL, PHP 8.1 et inclut phpMyAdmin pour la gestion de base de données.
 
 ## Pré-requis :white_check_mark:
 
@@ -16,7 +16,7 @@ Ce dépôt contient une configuration Docker avec Apache, MySQL, PHP 8.1 et incl
 1. Cloner le dépot Github :
 
 ```sh
-git clone git@github.com:BenjaminP17/Docker-Symfony-Skeleton.git
+git clone git@github.com:BenjaminP17/ApiPlatform-Project.git
 ```
 
 2. Construire et démarrer les conteneurs :
@@ -27,14 +27,20 @@ docker-compose up -d
 
 ## Utilisation
 
-- Accéder au serveur web :
+- Accéder à API Platform :
 
-Ouvrez votre navigateur et accédez à http://localhost:8741.
+Ouvrez votre navigateur et accédez à http://localhost:8741/api.
+
+- Générer les fixtures : 
+
+```sh
+php bin/console doctrine:fixtures:load
+```
 
 - Accéder à phpMyAdmin :
 
 Ouvrez votre navigateur et accédez à http://localhost:8081.
 
-- Utilisateur : Root
-- Mot de passe : aucun
+
+
 
